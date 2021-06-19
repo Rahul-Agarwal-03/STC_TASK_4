@@ -15,7 +15,7 @@ form.addEventListener("submit",function(e){
       console.log(`${form.elements.prog.value}`);
       console.log(`${form.elements.email_id.value}`);
       console.log(`${form.elements.number.value}`);
-    
+      alert("Your form Has been sucessfully submitted!!!");
 })
 student.addEventListener("change",function(){
     if(!(form.elements.student.value.length<=30 && letters.test(form.elements.student.value)))

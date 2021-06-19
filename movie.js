@@ -3,6 +3,7 @@ const email=form.elements.email;
 const movie=form.elements.movie;
 const ticket = form.elements.ticket;
 const booking = document.querySelector(".booking");
+const table= document.createElement("table");
 function calculatePrice(t)
 {
     if(t==="platinum")
@@ -20,5 +21,7 @@ function calculatePrice(t)
 }
 form.addEventListener("submit",function(e){
     e.preventDefault();
-    booking.append(`Hi, ${form.elements.name.value}, you have booked ${ticket.value} ticket of ${movie.value}. It will cost you ${calculatePrice(ticket.value)}. Ticket has been sent to your mail id ${email.value}`)
+    booking.appendChild(table);
+    document.querySelector("table").innerHTML="<th>Name</th><th>Email Id</th><th>Movie</th><th>Ticket</th><th>Price</th>";
+    document.querySelector("table").insertRow(1).innerHTML=`<td>${form.elements.name.value}</td><td>${email.value}</td><td>${movie.value}</td><td>${ticket.value}</td><td>${calculatePrice(ticket.value)}</td>`;
 })

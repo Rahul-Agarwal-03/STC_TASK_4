@@ -1,2 +1,0 @@
-# STC_TASK_4
-STC JS Task
